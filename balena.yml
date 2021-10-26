@@ -1,0 +1,28 @@
+name: mood-tracker
+description: >-
+  A voice-controlled mood tracker you can deploy to your RaspberryPi
+joinable: false
+fleetcta: Mood tracker
+post-provisioning: >-
+  Once the application starts, train Rhasspy's model by accessing port :12101 at
+  you device's local IP address on the browser. After making sure you have a working
+  audio input, you can access port :80, which will show you the mood tracker UI.
+type: sw.application
+assets:
+  repository:
+    type: blob.asset
+    data:
+      url: 'https://github.com/edufschmidt/balena-mood-tracker'
+  logo:
+    type: blob.asset
+    data:
+      url: >-
+        https://raw.githubusercontent.com/edufschmidt/balena-mood-tracker/master/images/hub-logo512.png
+data:
+  applicationEnvironmentVariables:
+    - ENVIRONMENT: production
+  defaultDeviceType: raspberrypi3
+  supportedDeviceTypes:
+    - raspberrypi3
+    - raspberrypi4-64
+version: 0.1.0

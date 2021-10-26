@@ -1,0 +1,35 @@
+{
+    "dialogue": {
+        "system": "rhasspy"
+    },
+    "handle": {
+        "remote": {
+            "url": "http://n8n:5678/webhook/intents"
+        },
+        "system": "remote"
+    },
+    "intent": {
+        "system": "fsticuffs"
+    },
+    "microphone": {
+        "pyaudio": {
+            "device": "0"
+        },
+        "system": "pyaudio"
+    },
+    "sounds": {
+        "system": "aplay"
+    },
+    "speech_to_text": {
+        "system": "kaldi"
+    },
+    "text_to_speech": {
+        "system": "nanotts"
+    },
+    "wake": {
+        "porcupine": {
+            "keyword_path": "computer_raspberry-pi.ppn"
+        },
+        "system": "porcupine"
+    }
+}

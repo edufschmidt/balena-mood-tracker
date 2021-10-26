@@ -1,0 +1,69 @@
+version: "2"
+
+volumes:
+  balena-voice-moody-data:
+  balena-voice-n8n-data:
+  balena-voice-rhasspy-data:
+  balena-voice-audio-data:
+  pulse:
+  certs:
+
+networks:
+  default:
+  proxy:
+    external: true
+
+services:
+  moody:
+    build: ./moody
+    container_name: "moody"
+    volumes:
+      - "balena-voice-moody-data:/var/lib/moody/"
+    ports:
+      - "80:80"
+    networks:
+      - default
+
+  # https://github.com/rhasspy/rhasspy
+  rhasspy:
+    build: ./rhasspy
+    container_name: rhasspy
+    ports:
+      - "12101:12101"
+    command: --profile en --user-profiles /profiles
+    networks:
+      - default
+    volumes:
+      # - "balena-voice-rhasspy-data:/profiles"
+      - "pulse:/run/pulse"
+    environment:
+      - PULSE_SERVER=unix:/run/pulse/pulseaudio.socket
+
+  # https://github.com/balenablocks/audio
+  audio:
+    build: ./audio
+    container_name: "audio"
+    privileged: true
+    ports:
+      - "4317:4317"
+    volumes:
+      - "balena-voice-audio-data:/data"
+      - "pulse:/run/pulse"
+    devices:
+      - /dev/snd:/dev/snd
+    labels:
+      io.balena.features.dbus: true
+
+  n8n:
+    build: ./n8n
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    volumes:
+      - "balena-voice-n8n-data:/home/root/.n8n"
+    networks:
+      - default
+    environment:
+      - EXECUTIONS_PROCESS=main
+    labels:
+      io.balena.features.supervisor-api: true

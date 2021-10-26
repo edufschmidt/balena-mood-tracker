@@ -1,0 +1,17 @@
+FROM balenalib/%%BALENA_MACHINE_NAME%%-alpine
+
+RUN apk update && \
+    apk add --update nodejs npm && \
+    apk add --virtual build-dependencies build-base gcc make wget git python3
+
+RUN npm install node-gyp sqlite3 n8n -g
+
+RUN npm cache clean --force
+
+COPY ./workflows ./workflows
+
+RUN npx n8n import:workflow --separate --input=./workflows
+RUN npx n8n update:workflow --all --active=true
+
+CMD [ "n8n" ]
+

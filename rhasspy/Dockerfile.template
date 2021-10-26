@@ -1,0 +1,9 @@
+FROM rhasspy/rhasspy:2.5.11
+
+RUN mkdir -p /var/cache/apt/arm64/archives/partial
+RUN curl -skL https://raw.githubusercontent.com/balenablocks/audio/master/scripts/alsa-bridge/debian-setup.sh | sh
+
+COPY profiles/en/sentences.ini /profiles/en/sentences.ini
+COPY profiles/en/profile.json /profiles/en/profile.json
+COPY profiles/en/slots/intensifiers /profiles/en/slots/intensifiers
+COPY profiles/en/slots/moods /profiles/en/slots/moods
