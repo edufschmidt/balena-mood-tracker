@@ -4,6 +4,8 @@ RUN apk update && \
     apk add --update nodejs npm && \
     apk add --virtual build-dependencies build-base gcc make wget git python3
 
+RUN npm install uuid -g
+
 RUN npm install node-gyp sqlite3 n8n -g
 
 RUN npm cache clean --force
