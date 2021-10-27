@@ -21,8 +21,8 @@ assets:
 data:
   applicationEnvironmentVariables:
     - ENVIRONMENT: production
-  defaultDeviceType: raspberrypi3
+  defaultDeviceType: raspberrypi3-64
   supportedDeviceTypes:
-    - raspberrypi3
+    - raspberrypi3-64
     - raspberrypi4-64
 version: 0.1.0
