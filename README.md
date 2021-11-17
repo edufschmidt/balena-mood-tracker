@@ -36,7 +36,7 @@ Note that this assumes your device is set to local mode.
 
 Or, you can just push this button, and the project will deploy to your balenaCloud account:
 
-[![](https://balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/edufschmidt/balena-mood-tracker)
+[![](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/edufschmidt/balena-mood-tracker)
 
 ## TO DO
 ### Fixes
