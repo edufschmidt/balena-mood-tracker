@@ -43,7 +43,7 @@ Or, you can just push this button, and the project will deploy to your balenaClo
 - [ ] Add the UI build step to the Docker build
 
 ### Rhasspy
-- [ ] Handle intensifiers
+- [x] Handle intensifiers
 - [ ] Handle different times/ranges
 - [ ] Add more complex rules
 ### API
