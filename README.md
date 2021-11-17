@@ -40,24 +40,25 @@ Or, you can just push this button, and the project will deploy to your balenaClo
 
 ## TO DO
 ### Fixes
-- [] Add the UI build step to the Docker build
+- [ ] Add the UI build step to the Docker build
 
 ### Rhasspy
-- [] Handle intensifiers
-- [] Handle different times/ranges
-- [] Add more complex rules
+- [ ] Handle intensifiers
+- [ ] Handle different times/ranges
+- [ ] Add more complex rules
 ### API
-- [] Integrate more closely with Rhasspy, and provide endpoints for configuring it
-- [] Allow for the creation of logs that span multiple days/hours/years
-- [] Allow for the creation of notes to correlate with moods
-- [] Allow users to log moods on arbitrarily chosen dates/times
-- [] Improve sentiment analysis/scoring strategy e.g., to take into account intensifiers
-- [] Process data and generate some statistics
+- [ ] Integrate more closely with Rhasspy, and provide endpoints for configuring it
+- [ ] Allow for the creation of logs that span multiple days/hours/years
+- [ ] Allow for the creation of notes to correlate with moods
+- [ ] Allow users to log moods on arbitrarily chosen dates/times
+- [ ] Improve sentiment analysis/scoring strategy e.g., to take into account intensifiers
+- [ ] Process data and generate some statistics
 ### UI
-- [] Create empty state
-- [] Create error state
-- [] Show events other than mood logs (e.g., from notes)
-- [] Show logs that span multiple days/hours/years
-- [] Stack with google calendar/retrieve calendar events for context
-- [] Aggregate mood logs based on zoom level
-- [] Draw timeline ticks
+- [ ] Create empty state
+- [ ] Create error state
+- [ ] Show events other than mood logs (e.g., from notes)
+- [ ] Show logs that span multiple days/hours/years
+- [ ] Stack with google calendar/retrieve calendar events for context
+- [ ] Aggregate mood logs based on zoom level
+- [ ] Draw timeline ticks
+- [ ] Store selected data range locally so that it doesn't get lost after a page refresh.
