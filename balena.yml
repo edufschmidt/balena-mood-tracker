@@ -4,9 +4,16 @@ description: >-
 joinable: false
 fleetcta: Mood tracker
 post-provisioning: >-
-  Once the application starts, train Rhasspy's model by accessing port :12101 at
-  you device's local IP address on the browser. After making sure you have a working
-  audio input, you can access port :80, which will show you the mood tracker UI.
+  ## Usage instructions
+  
+  Once the application starts, train Rhasspy's model by accessing port `:12101` at you device's local IP address on the browser.
+  
+  After making sure you have a working audio input, access port `:80` to access the Web UI and track your mood.
+  
+  To create new mood logs, simply say "computer, I'm feeling {intensifier} {mood} today". After a few seconds, the new record will show up on the UI.
+  
+  To add support for new moods/intensifiers, as well as change how you interact with the mood tracker, go back to Rhasspy's UI and edit the configurations.
+  
 type: sw.application
 assets:
   repository:
