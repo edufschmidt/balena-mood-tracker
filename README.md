@@ -2,6 +2,8 @@
 
 A voice-controlled mood tracking app meant for deployment on balena devices.
 
+For a detailed overview of the project, including motivation, setup, and usage instructions, take a look at [this blog post](https://www.balena.io/blog/build-self-hosted-voice-controlled-mood-tracker-rhasspy-balena/).
+
 ## Usage
 
 Once the `mood-tracker` project is deployed to your device, you need to train Rhasspy. In order to do this, navigate to Rhasspy's UI at `<device-ip>:12101`, and click on the train button. You might also need to download some extra packages, as instructed in the UI.
